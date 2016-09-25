@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
@@ -16,28 +15,27 @@ import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import net.minecraft.server.v1_8_R3.MobSpawnerAbstract;
 
 public class GemsAltar implements Listener{
 
-	String commonGem = "§6Common §6Enchantment §aGem";
-	String rareGem = "§bRare §6Enchantment §aGem";
-	String legendGem = "§eLegendary §6Enchantment §aGem";
+	String commonGem = "Â§6Common Â§6Enchantment Â§aGem";
+	String rareGem = "Â§bRare Â§6Enchantment Â§aGem";
+	String legendGem = "Â§eLegendary Â§6Enchantment Â§aGem";
 
-	private static ItemStack poisonBlade = ItemUtil.createItem(Material.ENCHANTED_BOOK, "§eEnchanted Book §7(Click on a Sword)", "§7Poison Blade I");
-	private static ItemStack aoe = ItemUtil.createItem(Material.ENCHANTED_BOOK, "§eEnchanted Book §7(Click on a Pickaxe)", "§7Area of Effect I");
-	private static ItemStack superSmash = ItemUtil.createItem(Material.ENCHANTED_BOOK, "§eEnchanted Book §7(Click on a Sword)", "§7Super Smash I");
-	private static ItemStack diminish = ItemUtil.createItem(Material.ENCHANTED_BOOK, "§eEnchanted Book §7(Click on a Weapon)", "§7Diminish I");
-	private static ItemStack compactArrow = ItemUtil.createItem(Material.ENCHANTED_BOOK, "§eEnchanted Book §7(Click on a Bow)", "§7Compact Arrow I");
-	private static ItemStack dodge = ItemUtil.createItem(Material.ENCHANTED_BOOK, "§eEnchanted Book §7(Click on a Chestplate)", "§7Dodge");
-	private static ItemStack smelt = ItemUtil.createItem(Material.ENCHANTED_BOOK, "§eEnchanted Book §7(Click on a Pickaxe)", "§7Smelt I");
-	private static ItemStack crush = ItemUtil.createItem(Material.ENCHANTED_BOOK, "§eEnchanted Book §7(Click on Boots)", "§7Crush I");
+	private static ItemStack poisonBlade = ItemUtil.createItem(Material.ENCHANTED_BOOK, "Â§eEnchanted Book Â§7(Click on a Sword)", "Â§7Poison Blade I");
+	private static ItemStack aoe = ItemUtil.createItem(Material.ENCHANTED_BOOK, "Â§eEnchanted Book Â§7(Click on a Pickaxe)", "Â§7Area of Effect I");
+	private static ItemStack superSmash = ItemUtil.createItem(Material.ENCHANTED_BOOK, "Â§eEnchanted Book Â§7(Click on a Sword)", "Â§7Super Smash I");
+	private static ItemStack diminish = ItemUtil.createItem(Material.ENCHANTED_BOOK, "Â§eEnchanted Book Â§7(Click on a Weapon)", "Â§7Diminish I");
+	private static ItemStack compactArrow = ItemUtil.createItem(Material.ENCHANTED_BOOK, "Â§eEnchanted Book Â§7(Click on a Bow)", "Â§7Compact Arrow I");
+	private static ItemStack dodge = ItemUtil.createItem(Material.ENCHANTED_BOOK, "Â§eEnchanted Book Â§7(Click on a Chestplate)", "Â§7Dodge");
+	private static ItemStack smelt = ItemUtil.createItem(Material.ENCHANTED_BOOK, "Â§eEnchanted Book Â§7(Click on a Pickaxe)", "Â§7Smelt I");
+	private static ItemStack crush = ItemUtil.createItem(Material.ENCHANTED_BOOK, "Â§eEnchanted Book Â§7(Click on Boots)", "Â§7Crush I");
 
 	@EventHandler
 	public void getGem(PlayerToggleSneakEvent e){
 
 		List<String> lore = new ArrayList<String>();
-		lore.add("§aUse this at the Enchantment Altar at §c/spawn");
+		lore.add("Â§aUse this at the Enchantment Altar at Â§c/spawn");
 
 		ItemStack gem = new ItemStack(Material.EMERALD);
 		ItemMeta gemMeta = gem.getItemMeta();
@@ -69,6 +67,7 @@ public class GemsAltar implements Listener{
 
 		/** Location **/
 		Location loc = new Location(e.getPlayer().getWorld(), -179, 64, 187);
+		
 		/**Altar Code**/
 		if(e.getClickedBlock().getType() == Material.ENCHANTMENT_TABLE){
 
@@ -91,29 +90,17 @@ public class GemsAltar implements Listener{
 					case 1:
 						/**Common*/
 						e.getPlayer().getInventory().addItem(poisonBlade);
-						e.getPlayer().sendMessage("§6You recieved the §aPosion Blade §6Enchantment.");
+						e.getPlayer().sendMessage("Â§6You recieved the Â§aPosion Blade Â§6Enchantment.");
 						break;
 					case 2:
 						/**Common*/
 						e.getPlayer().getInventory().addItem(aoe);
-						e.getPlayer().sendMessage("§6You recieved the §aArea of Effect §6Enchantment.");
+						e.getPlayer().sendMessage("Â§6You recieved the Â§aArea of Effect Â§6Enchantment.");
 						break;
-						/*						
-						case 4:
-						 *//**Legend*//*
-							e.getPlayer().getInventory().addItem(diminish);
-							e.getPlayer().sendMessage("§6You recieved the §aDiminish §6Enchantment.");
-							break;
-						case 5:
-						  *//**Legend*//*
-							e.getPlayer().getInventory().addItem(compactArrow);
-							e.getPlayer().sendMessage("§6You recieved the §aCompact Arrow §6Enchantment.");
-							break;
-						   */
 					case 3:
 						/**Common**/
 						e.getPlayer().getInventory().addItem(smelt);
-						e.getPlayer().sendMessage("§6You recieved the §aSmelt §6Enchantment.");
+						e.getPlayer().sendMessage("Â§6You recieved the Â§aSmelt Â§6Enchantment.");
 						break;
 					}
 
@@ -141,21 +128,52 @@ public class GemsAltar implements Listener{
 				case 1:
 					/**Rare*/
 					e.getPlayer().getInventory().addItem(superSmash);
-					e.getPlayer().sendMessage("§6You recieved the §aSuper Smash §6Enchantment.");
+					e.getPlayer().sendMessage("Â§6You recieved the Â§aSuper Smash Â§6Enchantment.");
 					break;
 					/**Rare**/
 				case 2:
 					e.getPlayer().getInventory().addItem(crush);
-					e.getPlayer().sendMessage("§6You recieved the §aCrush §6Enchantment.");
+					e.getPlayer().sendMessage("Â§6You recieved the Â§aCrush Â§6Enchantment.");
 					break;
 
 				case 3:
 					/**Rare*/
 					e.getPlayer().getInventory().addItem(dodge);
-					e.getPlayer().sendMessage("§6You recieved the §aDodge §6Enchantment.");
+					e.getPlayer().sendMessage("Â§6You recieved the Â§aDodge Â§6Enchantment.");
 					break;
 				}
 				return;
+			}
+		}
+		/**Legendary Gems*/
+		if(e.getPlayer().getItemInHand() != null && e.getPlayer().getItemInHand().getItemMeta() != null && e.getPlayer().getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase(legendGem)){
+			
+			if(!e.getClickedBlock().getLocation().equals(loc)) return;
+			
+			e.setCancelled(true);
+
+			if(e.getPlayer().getItemInHand().getAmount() == 1)
+				e.getPlayer().getInventory().remove(e.getPlayer().getItemInHand());
+
+			e.getPlayer().getItemInHand().setAmount(e.getPlayer().getItemInHand().getAmount() - 1);
+
+			e.getPlayer().updateInventory();
+
+			
+			Random randomGenerator = new Random();
+			int randomIntRare = randomGenerator.nextInt(2) + 1;
+
+			switch(randomIntRare){					
+			case 1:
+			 /**Legend*/
+				e.getPlayer().getInventory().addItem(diminish);
+				e.getPlayer().sendMessage("Â§6You recieved the Â§aDiminish Â§6Enchantment.");
+				break;
+			case 2:
+			  /**Legend*/
+				e.getPlayer().getInventory().addItem(compactArrow);
+				e.getPlayer().sendMessage("Â§6You recieved the Â§aCompact Arrow Â§6Enchantment.");
+				break;
 			}
 		}
 	}
