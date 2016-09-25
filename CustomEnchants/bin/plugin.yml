@@ -1,0 +1,10 @@
+main: com.legendarycrown.customenchants.CustomEnchants
+name: CoretexEnchants
+version: 1.0
+commands:
+  novapickaxe:
+  novasword:
+  novabow:
+  novabomb:
+  novaaxe:
+  books:
